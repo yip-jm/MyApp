@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ActivityF3Aboutus"
+    android:fitsSystemWindows="true">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/aboutus_logo"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@mipmap/ic_logo_foreground" />
+
+                <TextView
+                    android:id="@+id/aboutus_app_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/aboutus_logo"
+                    android:layout_centerHorizontal="true"
+                    android:text="被窝"
+                    android:textColor="@color/black"
+                    android:textSize="30sp" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/aboutus_app_name"
+                    android:layout_centerHorizontal="true"
+                    android:text="Version 1.0.0"
+                    android:textColor="@color/deep_grey"
+                    android:textSize="22sp" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@color/grey" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/us1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:text="关于我们"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/us1"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="24dp"
+                    android:text="“被窝”是由广州明十三互联网科技有限公司开发用于心理学（以及其他社会学科）主试招募被试的平台。同时，热爱心理学实验的被试也能在此找到自己心仪的实验。"
+                    android:textColor="@color/text_color"
+                    android:textSize="16sp" />
+
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:background="@color/grey" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/us2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:text="联系我们"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/contactus1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/us2"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:text="如果你有关于本产品的任何疑惑，或者想与我们合作，可以通过一下方式联系我们。"
+                    android:textColor="@color/text_color"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/contactus2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/contactus1"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="10dp"
+                    android:text="联系邮箱: TwelveMing@163.com"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+
+                <TextView
+                    android:id="@+id/contactus3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/contactus2"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="10dp"
+                    android:text="联系电话1: 13417937521"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/contactus4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/contactus3"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="10dp"
+                    android:text="联系电话2: 15013016675"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/contactus5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/contactus4"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="10dp"
+                    android:text="联系微信1: light-flame"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/contactus6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/contactus5"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="10dp"
+                    android:text="联系微信2: hth865371474"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/contactus6"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/contact"/>
+
+
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

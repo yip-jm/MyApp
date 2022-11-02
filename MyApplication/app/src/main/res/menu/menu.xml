@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/f1"
+        android:icon="@drawable/selector_home"
+        android:title="实验" />
+    <item
+        android:id="@+id/f2"
+        android:icon="@drawable/selector_goingon"
+        android:title="正在进行" />
+    <item
+        android:id="@+id/f3"
+        android:icon="@drawable/selector_me"
+        android:title="我的" />
+
+</menu>

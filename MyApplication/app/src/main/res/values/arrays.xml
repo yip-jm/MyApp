@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="publish_cate">
+        <item>人格</item>
+        <item>面孔</item>
+        <item>消费决策</item>
+        <item>阅读/学习/记忆</item>
+        <item>视知觉/眼动</item>
+        <item>空间信息</item>
+        <item>发展</item>
+        <item>其他</item>
+    </string-array>
+
+    <string-array name="publish_method">
+        <item>脑电</item>
+        <item>行为</item>
+        <item>其他</item>
+    </string-array>
+
+    <string-array name="publish_exppos">
+        <item>中山大学南校区</item>
+        <item>中山大学东校区</item>
+        <item>中山大学北校区</item>
+        <item>中山大学珠海校区</item>
+        <item>中山大学深圳校区</item>
+    </string-array>
+
+    <string-array name="publish_expeyesight">
+        <item>视力正常</item>
+        <item>矫正（戴眼镜）后正常</item>
+        <item>近视</item>
+        <item>远视</item>
+        <item>不限</item>
+    </string-array>
+
+    <string-array name="publish_exphand">
+        <item>右利手</item>
+        <item>左利手</item>
+        <item>不限</item>
+    </string-array>
+
+    <string-array name="publish_explang">
+        <item>中文母语</item>
+        <item>外文母语</item>
+        <item>不限</item>
+    </string-array>
+
+    <string-array name="publish_expmarry">
+        <item>恋爱中</item>
+        <item>单身</item>
+        <item>不限</item>
+    </string-array>
+
+
+
+
+</resources>

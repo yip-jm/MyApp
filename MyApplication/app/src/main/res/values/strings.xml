@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">My Application</string>
+
+    <string name="male">男</string>
+    <string name="female">女</string>
+    <string name="right">右</string>
+    <string name="left">左</string>
+    <string name="normal">视力度数正常</string>
+    <string name="cornormal">矫正（戴眼镜）后正常</string>
+    <string name="myopia">近视</string>
+    <string name="hyperopia">远视</string>
+    <string name="normal1">视力屈光正常</string>
+    <string name="astigmatism">散光</string>
+    <string name="colorblind">色盲/色弱</string>
+    <string name="others">其他视力问题</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+</resources>

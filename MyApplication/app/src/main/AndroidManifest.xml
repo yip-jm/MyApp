@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.myapplication">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_logo_foreground"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication"
+        tools:targetApi="31">
+        <activity
+            android:name=".ActivityF1Exprecom"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityF3MyinfoSetgender"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityF3MyinfoSetnickname"
+            android:label="修改昵称" />
+        <activity
+            android:name=".ActivityRegister"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".ActivityF1Proexp"
+            android:label="按专业分类" />
+        <activity
+            android:name=".ActivityF1Otherexp"
+            android:label="其他实验" />
+        <activity
+            android:name=".ActivityF1Brainexp"
+            android:label="脑电实验" />
+        <activity
+            android:name=".ActivityF1Normexp"
+            android:label="行为实验" />
+        <activity
+            android:name=".ActivityF1Distsort"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityF1Timesort"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityF1Rewardsort"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityLogin"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".ActivityF2Publish"
+            android:label="发布实验" />
+        <activity
+            android:name=".ActivityF1Quesexp"
+            android:label="线上问卷" />
+        <activity
+            android:name=".ActivityF3Mycert"
+            android:label="主试认证" />
+        <activity
+            android:name=".ActivityF3Aboutus"
+            android:label="关于我们" />
+        <activity
+            android:name=".ActivityF3Myinfo"
+            android:label="账号资料" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
