@@ -3,8 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.myapplication">
 
+    <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -16,15 +20,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
-        <activity
-            android:name=".ActivityF1Exprecom"
-            android:exported="false" />
-        <activity
-            android:name=".ActivityF3MyinfoSetgender"
-            android:exported="false" />
-        <activity
-            android:name=".ActivityF3MyinfoSetnickname"
-            android:label="修改昵称" />
         <activity
             android:name=".ActivityRegister"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
@@ -41,17 +36,8 @@
             android:name=".ActivityF1Normexp"
             android:label="行为实验" />
         <activity
-            android:name=".ActivityF1Distsort"
-            android:exported="false" />
-        <activity
-            android:name=".ActivityF1Timesort"
-            android:exported="false" />
-        <activity
-            android:name=".ActivityF1Rewardsort"
-            android:exported="false" />
-        <activity
-            android:name=".ActivityLogin"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:name=".MainActivity"
+            android:exported="true"/>
         <activity
             android:name=".ActivityF2Publish"
             android:label="发布实验" />
@@ -68,11 +54,11 @@
             android:name=".ActivityF3Myinfo"
             android:label="账号资料" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ActivityLogin"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

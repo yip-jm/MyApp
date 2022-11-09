@@ -60,20 +60,21 @@
                             android:layout_weight="4"
                             android:layout_marginStart="20dp"
                             android:layout_marginEnd="30dp"
-                            android:hint="3–10位数字或小写字母组合"
+                            android:hint="3–10位数字或字母组合"
                             android:textColorHint="@color/deep_grey"
+                            android:textColor="@color/black"
                             android:theme="@style/myeditext"
                             android:textSize="15sp"/>
 
                         <TextView
-                            android:id="@+id/reg_tipacc"
+                            android:id="@+id/reg_acctip"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_weight="1"
                             android:layout_marginStart="20dp"
                             android:layout_marginEnd="30dp"
                             android:gravity="center_vertical"
-                            android:text="* 账号至少为3位！"
+                            android:text="* 账号应为3-10位数字或字母组合！"
                             android:textColor="@color/red"
                             android:textSize="12sp"
                             android:visibility="invisible"/>
@@ -108,21 +109,22 @@
                             android:layout_weight="4"
                             android:layout_marginStart="20dp"
                             android:layout_marginEnd="30dp"
-                            android:hint="6–18位数字或小写字母组合"
+                            android:hint="6–18位数字或字母组合"
                             android:textColorHint="@color/deep_grey"
+                            android:textColor="@color/black"
                             android:theme="@style/myeditext"
                             android:textSize="15sp"
                             android:inputType="textPassword"/>
 
                         <TextView
-                            android:id="@+id/tx_signup_pwd"
+                            android:id="@+id/reg_pwd1tip"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_weight="1"
                             android:layout_marginStart="20dp"
                             android:layout_marginEnd="30dp"
                             android:gravity="center_vertical"
-                            android:text="* 密码不能少于6位！"
+                            android:text="* 账号应为8-16位数字或字母组合！"
                             android:textColor="@color/red"
                             android:textSize="12sp"
                             android:visibility="invisible"/>
@@ -160,11 +162,12 @@
                             android:hint="重复上面的密码"
                             android:textSize="15sp"
                             android:textColorHint="@color/deep_grey"
+                            android:textColor="@color/black"
                             android:theme="@style/myeditext"
                             android:inputType="textPassword"/>
 
                         <TextView
-                            android:id="@+id/tx_signup_repwd"
+                            android:id="@+id/reg_pwd2tip"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_weight="1"
@@ -206,13 +209,14 @@
                             android:layout_weight="4"
                             android:layout_marginStart="20dp"
                             android:layout_marginEnd="30dp"
-                            android:hint="请输入姓名"
+                            android:hint="请输入真实姓名"
                             android:textColorHint="@color/deep_grey"
+                            android:textColor="@color/black"
                             android:theme="@style/myeditext"
                             android:textSize="15sp"/>
 
                         <TextView
-                            android:id="@+id/tx_signup_nickname"
+                            android:id="@+id/reg_nametip"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_weight="1"
@@ -238,11 +242,63 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_gravity="center_vertical"
+                        android:text="出生日期:"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/reg_birth"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="4"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="30dp"
+                            android:hint="2000-01-01"
+                            android:textColorHint="@color/deep_grey"
+                            android:textColor="@color/black"
+                            android:inputType="date"
+                            android:theme="@style/myeditext"
+                            android:textSize="15sp"/>
+
+                        <TextView
+                            android:id="@+id/reg_birthtip"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="30dp"
+                            android:gravity="center_vertical"
+                            android:text="* 日期格式错误！"
+                            android:textColor="@color/red"
+                            android:textSize="12sp"
+                            android:visibility="invisible"/>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_gravity="center_vertical"
                         android:text="性        别:"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
                     <RadioGroup
+                        android:id="@+id/reg_gender"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -250,7 +306,7 @@
                         android:orientation="horizontal">
 
                         <RadioButton
-                            android:id="@+id/reg_man_rb"
+                            android:id="@+id/reg_man"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -260,7 +316,7 @@
                             android:theme="@style/myradiobutton"/>
 
                         <RadioButton
-                            android:id="@+id/reg_woman_rb"
+                            android:id="@+id/reg_woman"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginStart="50dp"
@@ -288,6 +344,7 @@
                         android:textSize="18sp" />
 
                     <RadioGroup
+                        android:id="@+id/reg_hand"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -295,7 +352,7 @@
                         android:orientation="horizontal">
 
                         <RadioButton
-                            android:id="@+id/reg_hand_right_rb"
+                            android:id="@+id/reg_hand_right"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -305,7 +362,7 @@
                             android:theme="@style/myradiobutton"/>
 
                         <RadioButton
-                            android:id="@+id/reg_hand_left_rb"
+                            android:id="@+id/reg_hand_left"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_marginStart="50dp"
@@ -334,6 +391,7 @@
                         android:textSize="18sp" />
 
                     <RadioGroup
+                        android:id="@+id/reg_ES"
                         android:layout_width="0dp"
                         android:layout_weight="3"
                         android:layout_height="wrap_content"
@@ -342,7 +400,7 @@
                         android:orientation="vertical">
 
                         <RadioButton
-                            android:id="@+id/reg_eyesg_norm_rb"
+                            android:id="@+id/reg_ESnorm"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:checked="true"
@@ -351,7 +409,7 @@
                             android:theme="@style/myradiobutton"/>
 
                         <RadioButton
-                            android:id="@+id/reg_eyesg_cornorm_rb"
+                            android:id="@+id/reg_EScornorm"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text="@string/cornormal"
@@ -359,7 +417,7 @@
                             android:theme="@style/myradiobutton"/>
 
                         <RadioButton
-                            android:id="@+id/reg_eyesg_myopia_rb"
+                            android:id="@+id/reg_ESmyopia"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text="@string/myopia"
@@ -367,7 +425,7 @@
                             android:theme="@style/myradiobutton"/>
 
                         <RadioButton
-                            android:id="@+id/reg_eyesg_hyper_rb"
+                            android:id="@+id/reg_EShyper"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text="@string/hyperopia"
@@ -395,6 +453,7 @@
                         android:textSize="18sp" />
 
                     <RadioGroup
+                        android:id="@+id/reg_EQ"
                         android:layout_width="0dp"
                         android:layout_weight="3"
                         android:layout_height="wrap_content"
@@ -403,7 +462,7 @@
                         android:orientation="vertical">
 
                         <RadioButton
-                            android:id="@+id/reg_eyequal_norm_rb"
+                            android:id="@+id/reg_EQnorm"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:checked="true"
@@ -412,7 +471,7 @@
                             android:theme="@style/myradiobutton"/>
 
                         <RadioButton
-                            android:id="@+id/reg_eyequal_cornol_rb"
+                            android:id="@+id/reg_EQast"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text="@string/astigmatism"
@@ -420,7 +479,7 @@
                             android:theme="@style/myradiobutton"/>
 
                         <RadioButton
-                            android:id="@+id/reg_eyequal_myopia_rb"
+                            android:id="@+id/reg_EQach"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text="@string/colorblind"
@@ -428,7 +487,7 @@
                             android:theme="@style/myradiobutton"/>
 
                         <RadioButton
-                            android:id="@+id/reg_eyequal_hyper_rb"
+                            android:id="@+id/reg_EQother"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text="@string/others"
@@ -460,19 +519,21 @@
                         android:orientation="vertical">
 
                         <EditText
+                            android:id="@+id/reg_tel"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_marginStart="20dp"
                             android:layout_marginEnd="30dp"
                             android:layout_weight="4"
-                            android:hint="请输入手机号码"
+                            android:hint="请输入手机号码用于联系"
                             android:inputType="phone"
                             android:textColorHint="@color/deep_grey"
+                            android:textColor="@color/black"
                             android:theme="@style/myeditext"
                             android:textSize="15sp" />
 
                         <TextView
-                            android:id="@+id/reg_phone"
+                            android:id="@+id/reg_teltip"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_marginStart="20dp"
@@ -485,6 +546,24 @@
                             android:visibility="invisible" />
 
                     </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_gravity="center_vertical"
+                        android:text="* 以上信息仅用于匹配和预约科学实验，请如实填写"
+                        android:textColor="@color/red"
+                        android:textSize="12sp" />
+
 
                 </LinearLayout>
 

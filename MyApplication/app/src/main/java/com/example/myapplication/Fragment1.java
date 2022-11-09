@@ -2,14 +2,15 @@ package com.example.myapplication;
 
 import androidx.lifecycle.ViewModelProvider;
 
+import android.accessibilityservice.AccessibilityService;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavArgument;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
@@ -25,6 +26,7 @@ import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class Fragment1 extends Fragment {
 
@@ -37,6 +39,7 @@ public class Fragment1 extends Fragment {
     TabLayout tablayout;
 
 
+
     public static Fragment1 newInstance() {
         return new Fragment1();
     }
@@ -44,6 +47,7 @@ public class Fragment1 extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+
         return inflater.inflate(R.layout.fragment_fragment1, container, false);
     }
 
@@ -53,15 +57,20 @@ public class Fragment1 extends Fragment {
         mViewModel = new ViewModelProvider(this).get(Fragment1ViewModel.class);
         // TODO: Use the ViewModel
 
+
+        Intent intent = getActivity().getIntent();
+        String acc = intent.getStringExtra("ACC");
+        System.out.print("f1: " );
+        System.out.println(acc);
+
         initView();
-
-
 
     }
 
     public void initView(){
         View view = getView();
         assert view != null;
+
 
         f1_quesexp = (LinearLayout) view.findViewById(R.id.f1_quesexp);
         f1_normexp = (LinearLayout) view.findViewById(R.id.f1_normexp);

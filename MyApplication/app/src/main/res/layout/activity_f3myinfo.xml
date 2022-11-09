@@ -18,7 +18,6 @@
             android:id="@+id/rl_info_headphoto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/rl_personinfo_title"
             android:layout_marginTop="20dp"
             android:background="@drawable/selector_white"
             android:clickable="true"
@@ -97,7 +96,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="@drawable/selector_white"
+                android:background="@color/white"
                 android:clickable="true">
 
                 <TextView
@@ -110,7 +109,7 @@
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/myifo_acc"
+                    android:id="@+id/myinfo_acc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -119,8 +118,6 @@
                     android:text="账号"
                     android:textSize="20sp" />
 
-
-
             </RelativeLayout>
 
             <LinearLayout
@@ -129,47 +126,6 @@
                 android:layout_height="1dp"
                 android:background="@color/grey"/>
 
-            <RelativeLayout
-                android:id="@+id/myinfo_nickname"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@drawable/selector_white"
-                android:clickable="true">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="20dp"
-                    android:text="昵称"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/myinfo_nickname_yes"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="30dp"
-                    android:text="昵称"
-                    android:textSize="20sp" />
-
-                <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/go1" />
-
-            </RelativeLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_marginStart="20dp"
-                android:layout_height="1dp"
-                android:background="@color/grey"/>
 
             <RelativeLayout
                 android:id="@+id/myinfo_gender"
@@ -188,7 +144,7 @@
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/myinfo_gender_yes"
+                    android:id="@+id/myinfo_gendertv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -232,7 +188,7 @@
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/myinfo_birth_yes"
+                    android:id="@+id/myinfo_birthtv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -274,14 +230,14 @@
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/myinfo_hand_yes"
+                    android:id="@+id/myinfo_handtv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/right"
-                    android:textSize="20sp"
-                    android:layout_centerVertical="true"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="30dp"/>
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="30dp"
+                    android:text="@string/right"
+                    android:textSize="20sp" />
 
                 <ImageView
                     android:layout_width="25dp"
@@ -299,7 +255,7 @@
                 android:background="@color/grey"/>
 
             <RelativeLayout
-                android:id="@+id/myinfo_eyesight"
+                android:id="@+id/myinfo_es"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/selector_white"
@@ -315,7 +271,7 @@
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/myinfo_eyesg_yes"
+                    android:id="@+id/myinfo_estv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -340,7 +296,7 @@
                 android:background="@color/grey"/>
 
             <RelativeLayout
-                android:id="@+id/myinfo_eyequal"
+                android:id="@+id/myinfo_eq"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/selector_white"
@@ -356,7 +312,7 @@
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/myinfo_eyequal_yes"
+                    android:id="@+id/myinfo_eqtv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -395,7 +351,7 @@
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/myinfo_tel_yes"
+                android:id="@+id/myinfo_teltv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
