@@ -126,6 +126,7 @@ public class Fragment3 extends Fragment {
                 case R.id.logout_button:
                     Intent mylogin = new Intent(getActivity(), ActivityLogin.class);
                     startActivity(mylogin);
+                    getActivity().finish();
                     break;
 
             }

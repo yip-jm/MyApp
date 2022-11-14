@@ -199,19 +199,19 @@ public class ActivityRegister extends AppCompatActivity {
         public void onCheckedChanged(RadioGroup group, int checkedId) {
             switch (checkedId){
                 case R.id.reg_man:
-                    in_gender = 1;
-                    break;
-
-                case R.id.reg_woman:
                     in_gender = 0;
                     break;
 
+                case R.id.reg_woman:
+                    in_gender = 1;
+                    break;
+
                 case R.id.reg_hand_right:
-                    in_hand = 1;
+                    in_hand = 0;
                     break;
 
                 case R.id.reg_hand_left:
-                    in_hand = 0;
+                    in_hand = 1;
                     break;
 
                 case R.id.reg_ESnorm:
