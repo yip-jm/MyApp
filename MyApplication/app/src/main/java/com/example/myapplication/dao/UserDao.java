@@ -77,7 +77,7 @@ public class UserDao {
 
         try{
             String sql = "insert into User(userAcc, userPwd, userName, userBirth, userGender," +
-                    "userHand, userES, userEQ, userTel) values (?,?,?,?,?,?,?,?,?)";
+                    "userHand, userES, userEQ, userTel, userCert) values (?,?,?,?,?,?,?,?,?,?)";
 
             if(connection != null){
                 PreparedStatement ps = connection.prepareStatement(sql);
@@ -92,6 +92,7 @@ public class UserDao {
                     ps.setInt(7, user.getES());
                     ps.setInt(8, user.getEQ());
                     ps.setString(9, user.getTel());
+                    ps.setInt(10, user.getCert());
 
                     int rs = ps.executeUpdate();
 
@@ -110,7 +111,7 @@ public class UserDao {
 
 
     //    查找用户是否存在
-    public static User findUser(String acc){
+    public User findUser(String acc){
          Connection connection = JDBCUtils.getConn();
          User user = null;
          try{
@@ -133,7 +134,8 @@ public class UserDao {
                          int es = rs.getInt(7);
                          int eq = rs.getInt(8);
                          String tel = rs.getString(9);
-                         user = new User(acc1, pwd, name, gender, birth, hand, es, eq, tel);
+                         int cert = rs.getInt(10);
+                         user = new User(acc1, pwd, name, gender, birth, hand, es, eq, tel, cert);
 
                      }
                  }
@@ -170,6 +172,9 @@ public class UserDao {
             else if(col == 9){
                 sql = "update User set userTel = ?  where userAcc = ?";
             }
+            else if(col == 10){
+                sql = "update User set userCert = ?  where userAcc = ?";
+            }
             if(connection != null){
 
                 PreparedStatement ps = connection.prepareStatement(sql);
@@ -198,6 +203,10 @@ public class UserDao {
                     }
                     else if(col == 9){
                         ps.setString(1, newinfo);
+                        rs = ps.executeUpdate();
+                    }
+                    else if(col == 10){
+                        ps.setInt(1, Integer.parseInt(newinfo));
                         rs = ps.executeUpdate();
                     }
 

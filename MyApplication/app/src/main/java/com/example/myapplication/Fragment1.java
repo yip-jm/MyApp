@@ -60,7 +60,6 @@ public class Fragment1 extends Fragment {
 
         Intent intent = getActivity().getIntent();
         String acc = intent.getStringExtra("ACC");
-        System.out.print("f1: " );
         System.out.println(acc);
 
         initView();

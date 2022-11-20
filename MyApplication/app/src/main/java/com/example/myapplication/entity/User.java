@@ -10,12 +10,13 @@ public class User {
     private int userES;
     private int userEQ;
     private String userTel;
+    private int userCert;
 
     public User(){
     }
 
     public User(String acc, String pwd, String name, int gender, String birth,
-                int hand, int es, int eq, String tel){
+                int hand, int es, int eq, String tel, int cert){
         this.userAcc = acc;
         this.userPwd = pwd;
         this.userName = name;
@@ -25,6 +26,7 @@ public class User {
         this.userES = es;
         this.userEQ = eq;
         this.userTel = tel;
+        this.userCert = cert;
     }
 
     public String getAcc(){     return userAcc;     }
@@ -54,6 +56,9 @@ public class User {
     public String getTel(){     return this.userTel;    }
     public void setTel(String tel){     this.userTel = tel;  }
 
+
+    public int getCert() {      return this.userCert;    }
+    public void setCert(int cert){  this.userCert = cert;   }
 
 }
 

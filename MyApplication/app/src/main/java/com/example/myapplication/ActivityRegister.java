@@ -45,8 +45,7 @@ public class ActivityRegister extends AppCompatActivity {
 
     private TextView reg_acctip, reg_pwd1tip, reg_pwd2tip, backtologin, reg_birthtip;
 
-
-    int in_gender = 1, in_hand = 1, in_es = 0, in_eq = 0;
+    private int in_gender = 1, in_hand = 1, in_es = 0, in_eq = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,13 +62,16 @@ public class ActivityRegister extends AppCompatActivity {
 
         reg_acc = (EditText) findViewById(R.id.reg_acc);
         reg_acc.addTextChangedListener(new JumpTextWatcher());
+        reg_acc.setImeOptions(EditorInfo.IME_ACTION_NEXT);
+        reg_acc.setSingleLine(true);
+
         reg_pwd = (EditText) findViewById(R.id.reg_pwd1);
         reg_pwd.addTextChangedListener(new ValTextWatcher());
         reg_pwd2 = (EditText) findViewById(R.id.reg_pwd2);
         reg_pwd2.addTextChangedListener(new RepTextWatcher());
         reg_name = (EditText) findViewById(R.id.reg_name);
         reg_name.setImeOptions(EditorInfo.IME_ACTION_DONE);
-        reg_name.setSingleLine();
+        reg_name.setSingleLine(true);
         reg_tel = (EditText) findViewById(R.id.reg_tel);
         reg_birth = (EditText) findViewById(R.id.reg_birth);
         reg_birth.addTextChangedListener(new ValDateWatcher());
@@ -110,12 +112,6 @@ public class ActivityRegister extends AppCompatActivity {
             }else{
                 reg_acctip.setVisibility(View.VISIBLE);
             }
-            if(str.contains("\r") || str.contains("\n")){
-                reg_acc.setText(str.replace("\r", "").replace("\n", ""));
-                reg_pwd.requestFocus();
-                reg_pwd.setSelection((reg_pwd.getText().length()));
-            }
-
         }
     }
 
@@ -297,6 +293,7 @@ public class ActivityRegister extends AppCompatActivity {
                         user.setES(in_es);
                         user.setEQ(in_eq);
                         user.setTel(in_tel);
+                        user.setCert(0);
 
                         new Thread(){
                             @Override

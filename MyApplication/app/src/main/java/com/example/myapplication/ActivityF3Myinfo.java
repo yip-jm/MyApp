@@ -12,8 +12,12 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.provider.ContactsContract;
+import android.text.InputType;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,6 +27,8 @@ import com.example.myapplication.entity.User;
 
 
 import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 public class ActivityF3Myinfo extends AppCompatActivity {
@@ -34,10 +40,7 @@ public class ActivityF3Myinfo extends AppCompatActivity {
 
     private OnClickListener listener; //监听
 
-
-    private String acc, name, birth, tel;
-
-
+    private String acc, name, birth, tel, ttel;
     int gender, hand, es, eq;
 
 
@@ -151,8 +154,6 @@ public class ActivityF3Myinfo extends AppCompatActivity {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
 
-                                    if (gender == 0)  myinfo_gendertv.setText("男");
-                                    else    myinfo_gendertv.setText("女");
                                     new Thread(){
                                         @Override
                                         public void run(){
@@ -192,8 +193,7 @@ public class ActivityF3Myinfo extends AppCompatActivity {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
 //                                    System.out.println(hand);
-                                    if (hand == 0)  myinfo_handtv.setText("右");
-                                    else    myinfo_handtv.setText("左");
+
                                     new Thread(){
                                         @Override
                                         public void run(){
@@ -233,10 +233,7 @@ public class ActivityF3Myinfo extends AppCompatActivity {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     System.out.println(es);
-                                    if (es == 0)  myinfo_estv.setText("视力度数正常");
-                                    else if(es == 1)   myinfo_estv.setText("矫正（戴眼镜）后正常");
-                                    else if(es == 2)   myinfo_estv.setText("近视");
-                                    else   myinfo_estv.setText("远视");
+
                                     new Thread(){
                                         @Override
                                         public void run(){
@@ -276,10 +273,6 @@ public class ActivityF3Myinfo extends AppCompatActivity {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     System.out.println(eq);
-                                    if (eq == 0)  myinfo_eqtv.setText("视力屈光正常");
-                                    else if(eq == 1)   myinfo_eqtv.setText("散光");
-                                    else if(eq == 2)   myinfo_eqtv.setText("色盲/色弱");
-                                    else   myinfo_eqtv.setText("其他视力问题");
                                     new Thread(){
                                         @Override
                                         public void run(){
@@ -306,13 +299,56 @@ public class ActivityF3Myinfo extends AppCompatActivity {
                     break;
 
                 case R.id.myinfo_tel:
+                    final View new_tel = getLayoutInflater().inflate(R.layout.myinfo_newtel, null);
+                    AlertDialog alertDialog_tel = new AlertDialog.Builder(ActivityF3Myinfo.this)
+                            .setTitle("请输入手机号号码")
+                            .setView(new_tel)
+                            .setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            })
+                            .setPositiveButton("OK", null).create();
 
+                    alertDialog_tel.show();
+                    alertDialog_tel.getButton(DialogInterface.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            EditText newtel = (EditText) new_tel.findViewById(R.id.et_newtel);
+                            ttel = newtel.getText().toString();
+                            if (ttel.length() != 11 || !isTel(ttel))
+                                Toast.makeText(getApplicationContext(), "电话号码输入不正确", Toast.LENGTH_SHORT).show();
+                            else {
+                                new Thread() {
+                                    @Override
+                                    public void run() {
+                                        UserDao userDao = new UserDao();
+                                        boolean userupdate = userDao.updateUser(acc, 9, ttel);
+                                        Message msgtel = new Message();
+                                        if (userupdate) msgtel.what = 11;
+                                        else msgtel.what = 12;
+                                        handler_newinfo.sendMessage(msgtel);
+                                    }
+                                }.start();
+                                alertDialog_tel.dismiss();
+                            }
+                        }
+                    });
 
+                    break;
 
             }
         }
 
 
+    }
+
+    private boolean isTel(String s) {
+        String regExp = "^((13[0-9])|(15[^4])|(18[0-9])|(17[0-8])|(14[5-9])|(166)|(19[8,9])|)\\d{8}$";
+        Pattern p = Pattern.compile(regExp);
+        Matcher m = p.matcher(s);
+        return m.matches();
     }
 
     @SuppressLint("HandlerLeak")
@@ -370,6 +406,8 @@ public class ActivityF3Myinfo extends AppCompatActivity {
                     break;
 
                 case 3:
+                    if (gender == 0)  myinfo_gendertv.setText("男");
+                    else    myinfo_gendertv.setText("女");
                     Toast.makeText(getApplicationContext(), "性别更新成功", Toast.LENGTH_SHORT).show();
                     break;
 
@@ -378,6 +416,8 @@ public class ActivityF3Myinfo extends AppCompatActivity {
                     break;
 
                 case 5:
+                    if (hand == 0)  myinfo_handtv.setText("右");
+                    else    myinfo_handtv.setText("左");
                     Toast.makeText(getApplicationContext(), "习惯用手更新成功", Toast.LENGTH_SHORT).show();
                     break;
 
@@ -386,6 +426,10 @@ public class ActivityF3Myinfo extends AppCompatActivity {
                     break;
 
                 case 7:
+                    if (es == 0)  myinfo_estv.setText("视力度数正常");
+                    else if(es == 1)   myinfo_estv.setText("矫正（戴眼镜）后正常");
+                    else if(es == 2)   myinfo_estv.setText("近视");
+                    else   myinfo_estv.setText("远视");
                     Toast.makeText(getApplicationContext(), "视力情况更新成功", Toast.LENGTH_SHORT).show();
                     break;
 
@@ -394,11 +438,24 @@ public class ActivityF3Myinfo extends AppCompatActivity {
                     break;
 
                 case 9:
+                    if (eq == 0)  myinfo_eqtv.setText("视力屈光正常");
+                    else if(eq == 1)   myinfo_eqtv.setText("散光");
+                    else if(eq == 2)   myinfo_eqtv.setText("色盲/色弱");
+                    else   myinfo_eqtv.setText("其他视力问题");
                     Toast.makeText(getApplicationContext(), "视觉质量更新成功", Toast.LENGTH_SHORT).show();
                     break;
 
                 case 10:
                     Toast.makeText(getApplicationContext(), "视觉质量更新失败", Toast.LENGTH_SHORT).show();
+                    break;
+
+                case 11:
+                    Toast.makeText(getApplicationContext(), "电话号码更新成功", Toast.LENGTH_SHORT).show();
+                    myinfo_teltv.setText(ttel);
+                    break;
+
+                case 12:
+                    Toast.makeText(getApplicationContext(), "电话号码更新失败", Toast.LENGTH_SHORT).show();
                     break;
             }
         }

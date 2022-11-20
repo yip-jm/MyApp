@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ActivityF3Mycert">
+    tools:context=".ActivityF3Mycert1">
 
 
     <LinearLayout
@@ -40,23 +40,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="20dp"
-                android:text="注册单位: "
-                android:textColor="@color/black"
-                android:textSize="20sp" />
+          <TextView
+              android:id="@+id/unit"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_centerVertical="true"
+              android:layout_marginStart="20dp"
+              android:text="注册单位: "
+              android:textColor="@color/black"
+              android:textSize="20sp" />
 
-            <EditText
+            <TextView
                 android:id="@+id/cert_unit"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
+                android:layout_marginStart="40dp"
                 android:layout_marginEnd="20dp"
-                android:ems="10"
-                android:hint="请选择注册单位"
+                android:layout_toEndOf="@+id/unit"
+                android:text="中山大学"
+                android:textColor="@color/deep_grey"
                 android:textSize="20sp" />
 
         </RelativeLayout>
@@ -76,6 +79,7 @@
             android:layout_height="wrap_content">
 
             <TextView
+                android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -84,14 +88,16 @@
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
-            <EditText
+            <TextView
                 android:id="@+id/cert_name"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
+                android:layout_marginStart="80dp"
                 android:layout_marginEnd="20dp"
-                android:ems="10"
-                android:hint="请填写真实姓名"
+                android:layout_toEndOf="@id/name"
+                android:text="姓名"
+                android:textColor="@color/deep_grey"
                 android:textSize="20sp" />
 
         </RelativeLayout>
@@ -112,6 +118,7 @@
             android:layout_height="wrap_content">
 
             <TextView
+                android:id="@+id/stuid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -121,16 +128,54 @@
                 android:textSize="20sp" />
 
 
-            <EditText
-                android:id="@+id/cert_stuid"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="20dp"
-                android:ems="10"
-                android:hint="请填写准确的信息"
-                android:inputType="number"
-                android:textSize="20sp" />
+          <TextView
+              android:id="@+id/cert_stuid"
+              android:layout_toEndOf="@+id/stuid"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_alignParentEnd="true"
+              android:layout_marginStart="80dp"
+              android:layout_marginEnd="20dp"
+              android:text="学号"
+              android:textColor="@color/deep_grey"
+              android:textSize="20sp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/grey" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+          <TextView
+              android:id="@+id/tel"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_centerVertical="true"
+              android:layout_marginStart="20dp"
+              android:text="手机号码: "
+              android:textColor="@color/black"
+              android:textSize="20sp" />
+
+          <TextView
+              android:id="@+id/cert_tel"
+              android:layout_toEndOf="@+id/tel"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_alignParentEnd="true"
+              android:layout_marginStart="40dp"
+              android:layout_marginEnd="20dp"
+              android:text="1234567891"
+              android:textColor="@color/deep_grey"
+              android:textSize="20sp" />
 
         </RelativeLayout>
 
@@ -148,41 +193,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="20dp"
-                android:text="手机号码: "
-                android:textColor="@color/black"
-                android:textSize="20sp" />
-
-            <EditText
-                android:id="@+id/cert_tel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="20dp"
-                android:ems="10"
-                android:hint="用于被试与主试联系"
-                android:inputType="phone"
-                android:textSize="20sp" />
-
-        </RelativeLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/grey" />
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
+                android:id="@+id/mail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -191,16 +202,17 @@
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
-            <EditText
-                android:id="@+id/cert_mail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="20dp"
-                android:ems="10"
-                android:hint="用于平台与主试联系"
-                android:inputType="textEmailAddress"
-                android:textSize="20sp" />
+          <TextView
+              android:id="@+id/cert_mail"
+              android:layout_toEndOf="@+id/mail"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_alignParentEnd="true"
+              android:layout_marginStart="40dp"
+              android:layout_marginEnd="20dp"
+              android:text="xxx@mail.com"
+              android:textColor="@color/deep_grey"
+              android:textSize="20sp" />
 
         </RelativeLayout>
 
@@ -213,14 +225,7 @@
             android:layout_marginBottom="10dp"
             android:background="@color/grey" />
 
-        <Button
-            android:id="@+id/certgo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="   认 证   "
-            android:textColor="@color/white"
-            android:textSize="20sp"/>
+
 
 
     </LinearLayout>
